@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4AFFEC25E7872300B03DC2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4AFFEB25E7872300B03DC2 /* SettingsViewController.swift */; };
 		3ADACE5F25C7EC1D0055561F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADACE5E25C7EC1D0055561F /* AppDelegate.swift */; };
 		3ADACE6125C7EC1D0055561F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADACE6025C7EC1D0055561F /* SceneDelegate.swift */; };
 		3ADACE6325C7EC1D0055561F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADACE6225C7EC1D0055561F /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A4AFFEB25E7872300B03DC2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3ADACE5B25C7EC1D0055561F /* Prework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ADACE5E25C7EC1D0055561F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ADACE6025C7EC1D0055561F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		3ADACE5225C7EC1D0055561F = {
 			isa = PBXGroup;
 			children = (
+				3A4AFFEB25E7872300B03DC2 /* SettingsViewController.swift */,
 				3ADACE5D25C7EC1D0055561F /* Prework */,
 				3ADACE7425C7EC1E0055561F /* PreworkTests */,
 				3ADACE7F25C7EC1E0055561F /* PreworkUITests */,
@@ -261,6 +264,7 @@
 				3ADACE6325C7EC1D0055561F /* ViewController.swift in Sources */,
 				3ADACE5F25C7EC1D0055561F /* AppDelegate.swift in Sources */,
 				3ADACE6125C7EC1D0055561F /* SceneDelegate.swift in Sources */,
+				3A4AFFEC25E7872300B03DC2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

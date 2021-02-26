@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g30-4i-go1">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -39,6 +39,7 @@
                                     <segment title="20%"/>
                                 </segments>
                                 <connections>
+                                    <action selector="SelectDefaultTip:" destination="Q93-5a-yU7" eventType="valueChanged" id="mF1-ah-PRh"/>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="7TR-GQ-gay"/>
                                 </connections>
                             </segmentedControl>
@@ -55,8 +56,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="fa7-uy-8iy"/>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="x1g-PL-Hbo"/>
+                                    <action selector="calculateTipFromBillAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="myB-bW-OWm"/>
+                                    <action selector="calculateTipFromBillAmount:" destination="BYZ-38-t0r" eventType="valueChanged" id="zBO-Tl-KEk"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-sR-hA6">
@@ -81,6 +82,13 @@
                             <outletCollection property="gestureRecognizers" destination="ltj-3K-Saz" appends="YES" id="dTz-Ru-2E2"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Vgz-tm-XmG">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Alh-lk-y4t">
+                            <connections>
+                                <segue destination="mHl-Zf-pDO" kind="show" id="d6c-gC-JBO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billAmountTextField" destination="HO1-BO-lwZ" id="2ay-p6-cL3"/>
                         <outlet property="tipAmountLabel" destination="8y6-Kt-yfc" id="Lig-2C-WzH"/>
@@ -89,7 +97,66 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Q93-5a-yU7" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="ltj-3K-Saz"/>
+            </objects>
+            <point key="canvasLocation" x="1064.6153846153845" y="79.620853080568722"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="gnR-N3-xEh">
+            <objects>
+                <viewController id="mHl-Zf-pDO" customClass="SettingsViewController" customModule="Prework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3rx-iK-TiK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XSH-cc-e72">
+                                <rect key="frame" x="26" y="196" width="339" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SelectDefaultTip:" destination="mHl-Zf-pDO" eventType="valueChanged" id="4Tf-gU-GpE"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-9T-W86">
+                                <rect key="frame" x="26" y="153" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HEX-ME-CfO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bYN-Qb-LLP"/>
+                    <connections>
+                        <outlet property="DefaultTipSelection" destination="XSH-cc-e72" id="Q8m-WG-SoG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsN-17-KyP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840" y="93.838862559241704"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wY0-Sa-O6s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g30-4i-go1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cQs-tw-gny">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cQz-Am-V3o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="God-P3-D4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.38461538461539" y="79.620853080568722"/>
         </scene>

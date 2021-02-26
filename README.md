@@ -4,7 +4,7 @@
 
 Submitted by: **Vivian Ross**
 
-Time spent: **4** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
@@ -22,24 +22,25 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] Including and implementing a default tip percentage through a settings page
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![](https://i.imgur.com/j2WNpVu.gif)
+
+![](https://i.imgur.com/tTGsBxK.gif)
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+My biggest challenges involved getting used to working with Xcode. The interface was very intimidating at first, and errors were very confusing to figure out.
 
 ## License
 
-    Copyright [2021] [Vivian Ross
+    Copyright [2021] [Vivian Ross]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
